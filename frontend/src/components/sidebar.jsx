@@ -457,7 +457,7 @@ const Sidebar = () => {
                 </div>
               ) : (
                 <div className={sidebarStyles.mobilePlaceholder}>
-                  Click the menu button on the left to select a technology 
+                  Click the menu button to select a technology 
                 </div>
               )}
             </div>
