@@ -6,7 +6,6 @@ import { Award, LogOut, LogIn, X, Menu, Brain } from 'lucide-react';
 const Navbar = ({ logoSrc }) => {
 const navigate = useNavigate();
 const [loggedIn, setLoggedIn] = useState(false);
-const [menuOpen, setMenuOpen] = useState(false);
 
 // useEffect hook to show the login status
   useEffect(() => {
@@ -40,7 +39,6 @@ const handlelogout = () => {
   window.dispatchEvent(
     new CustomEvent("authChanged", {detail: {user: null}})
   )
-  setMenuOpen(false);
   try {
     navigate('/login');
   }
@@ -97,41 +95,20 @@ const handlelogout = () => {
                 )}
             </div>
             <div className={navbarStyles.mobileMenuContainer}>
-              <button onClick={() => setMenuOpen((s) => !s)} className={navbarStyles.menuToggleButton}>
-                {menuOpen ? (
-                  <X className={navbarStyles.menuIcon} />
-                ) : (
-                  <Menu className={navbarStyles.menuIcon} />
-                )}
-              </button>
-
-              {menuOpen && (
-                
-                <div className={navbarStyles.mobileMenuPane1}>
-                  <ul className={navbarStyles.mobileMenuList}>
-                    <li>
-                      <NavLink to="/result" className={navbarStyles.mobileMenuItem} onClick={() => setMenuOpen(false)}> 
-                      <Award className={navbarStyles.mobileMenuIcon} />
-                        My Results
-                      </NavLink>
-                    </li>
-                    {loggedIn ? (
-                      <li>
-                        <button type='button' onClick={handlelogout} className={navbarStyles.mobileMenuItem}>
-                          <LogOut className={navbarStyles.mobileMenuIcon} />
-                          Logout
-                        </button>
-                      </li>
-                    ) : (
-                      <li>
-                        <NavLink to="/login" className={navbarStyles.mobileMenuItem} onClick={() => setMenuOpen(false)}>
-                          <LogIn className={navbarStyles.mobileMenuIcon} />
-                          Login
-                        </NavLink>
-                      </li>
-                    )}
-                  </ul>
-                </div>
+              <NavLink to="/result" className={navbarStyles.resultsButton}>
+                <Award className={navbarStyles.buttonIcon} />
+                My Results
+              </NavLink>
+              {loggedIn ? (
+                <button onClick={handlelogout} className={navbarStyles.logoutButton}>
+                  <LogOut className={navbarStyles.buttonIcon} />
+                  Logout
+                </button>
+              ) : (
+                <NavLink to="/login" className={navbarStyles.loginButton}>
+                  <LogIn className={navbarStyles.buttonIcon} />
+                  Login
+                </NavLink>
               )}
             </div>
 
