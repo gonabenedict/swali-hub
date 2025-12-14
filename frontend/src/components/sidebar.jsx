@@ -457,7 +457,7 @@ const Sidebar = () => {
                 </div>
               ) : (
                 <div className={sidebarStyles.mobilePlaceholder}>
-                  Select a technology from the menu
+                  Click the menu button on the left to select a technology 
                 </div>
               )}
             </div>
@@ -489,7 +489,7 @@ const Sidebar = () => {
                   Welcome to Swali Hub
                 </h2>
                 <p className={sidebarStyles.welcomeDescription}>
-                  Select a technology from the sidebar to start your quiz
+                  Select a technology to start your quiz
                   journey. Test your knowledge at basic, intermediate, or
                   advanced levels.
                 </p>
