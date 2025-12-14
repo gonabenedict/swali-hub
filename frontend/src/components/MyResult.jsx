@@ -16,7 +16,7 @@ const Badge = ({ percent }) => {
   return <span className={resultStyles.badgeNeedsWork}>Needs Work</span>;
 };
 
-const MyResult = ({ apiBase = "http://localhost:4000" }) => {
+const MyResult = ({ apiBase = import.meta.env.VITE_API_URL }) => {
     const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

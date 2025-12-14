@@ -15,7 +15,7 @@ const Login = ({ onLoginSuccess = null }) => {
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
-   const API_BASE = "http://localhost:4000/"
+   const API_BASE = import.meta.env.VITE_API_URL
 
   const handleSubmit = async(ev) => {
     ev.preventDefault();
