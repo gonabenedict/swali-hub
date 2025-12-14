@@ -500,7 +500,7 @@ const Sidebar = () => {
                       <Star size={20} />
                     </div>
                     <h3 className={sidebarStyles.featureTitle}>
-                      Multiple Technologies
+                      Diverse Coding Languages
                     </h3>
                     <p className={sidebarStyles.featureDescription}>
                       HTML, CSS, JavaScript, React, and more
