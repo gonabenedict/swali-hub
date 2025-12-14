@@ -95,10 +95,6 @@ const handlelogout = () => {
                 )}
             </div>
             <div className={navbarStyles.mobileMenuContainer}>
-              <NavLink to="/result" className={navbarStyles.resultsButton}>
-                <Award className={navbarStyles.buttonIcon} />
-                My Results
-              </NavLink>
               {loggedIn ? (
                 <button onClick={handlelogout} className={navbarStyles.logoutButton}>
                   <LogOut className={navbarStyles.buttonIcon} />

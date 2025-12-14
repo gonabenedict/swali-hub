@@ -4,6 +4,7 @@ import questionsData from '../assets/dummydata'
 import { Award, BookOpen, Code, Coffee, Cpu, Database, Globe, Layout, Sparkles, Star, Target, Terminal, Trophy, Zap, X, ChevronDown, Menu ,CheckCircle,XCircle} from 'lucide-react'
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 const API_BASE = import.meta.env.VITE_API_URL
 
@@ -746,6 +747,12 @@ const Sidebar = () => {
           )}
         </main>
 
+        <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200">
+          <NavLink to="/result" className="w-full block text-center py-2 px-4 rounded-full bg-gradient-to-r from-emerald-500 to-green-500 text-white font-semibold">
+            <Award className="inline h-4 w-4 mr-2" />
+            My Results
+          </NavLink>
+        </div>
       </div>
       <style>{sidebarStyles.customStyles}</style>
     </div>
